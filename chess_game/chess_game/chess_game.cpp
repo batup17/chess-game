@@ -349,31 +349,31 @@ void move_to_target_player_2(int& target_row, int& target_column, int& row, int&
 void pawn_possible_moves(int &row,int &column) {
 
 	if (board[row - 1][column] == "     ") {
-		// Boş bir hücreye hareket edebilirsiniz.
+		
 		board[row - 1][column] = "  .  ";
 		
 		if (row == 6) {
-			// İlk hamlede iki kare ilerleyebilirsiniz.	
+				
 				board[row - 2][column] = "  .  ";
 				
 		}
-		 // Geçerli bir hamle olduğunu işaretleyin.
+		
 	}
 
 	if (column > 0 && board[row - 1][column - 1] != "     ") {
-		// Sol çaprazda rakip taş varsa, taşı yiyebilirsiniz.
+		
 		int sent_row = row - 1;
 		int sent_column = column - 1;
 		is_it_target(sent_row, sent_column,player_1);
-		 // Geçerli bir hamle olduğunu işaretleyin.
+		 
 	}
 
 	if (column < 7 && board[row - 1][column + 1] != "     ") {
-		// Sağ çaprazda rakip taş varsa, taşı yiyebilirsiniz.
+		
 		int sentrow = row - 1;
 		int sentcolumn = column + 1;
 		is_it_target(sentrow, sentcolumn,player_1);
-		 // Geçerli bir hamle olduğunu işaretleyin.
+		
 	}
 
 }
@@ -381,31 +381,31 @@ void pawn_possible_moves(int &row,int &column) {
 void pawn_possible_moves_2(int& row, int& column) {
 
 	if (board[row + 1][column] == "     ") {
-		// Boş bir hücreye hareket edebilirsiniz.
+		
 		board[row + 1][column] = "  .  ";
 
 		if (row == 1) {
-			// İlk hamlede iki kare ilerleyebilirsiniz.	
+			
 			board[row + 2][column] = "  .  ";
 		}
-		// Geçerli bir hamle olduğunu işaretleyin.
+		
 	}
 
 	if (column > 0 && board[row + 1][column - 1] != "     ") {
-		// Sol çaprazda rakip taş varsa, taşı yiyebilirsiniz.
+		
 
 		int sent_row = row + 1;
 		int sent_column = column - 1;
 		is_it_target(sent_row, sent_column,player_2);
-		// Geçerli bir hamle olduğunu işaretleyin.
+		
 	}
 
 	if (column < 7 && board[row + 1][column + 1] != "     ") {
-		// Sağ çaprazda rakip taş varsa, taşı yiyebilirsiniz.
+		
 		int sentrow = row + 1;
 		int sentcolumn = column + 1;
 		is_it_target(sentrow, sentcolumn,player_2);
-		// Geçerli bir hamle olduğunu işaretleyin.
+		
 	}
 }
 
